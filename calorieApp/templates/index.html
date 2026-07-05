@@ -17,28 +17,13 @@
         {% csrf_token %}
         <input type="text" name="name" placeholder="Food Name" required>
         <input type="number" name="calories" placeholder="Calories" required>
-        <button type="submit">Add Item</button>
+        <button type="submit" name="add">Add Item</button>
     </form>
 
     <hr>
 
-    <h2>Logged Items</h2>
-    <ul>
-        {% for item in items %}
-            <li>
-                {{ item.name }} - {{ item.calories }} kcal 
-                </li>
-        {% empty %}
-            <li>No food items added yet.</li>
-        {% endfor %}
-    </ul>
-
-    <form method="POST" action="">
-        {% csrf_token %}
-        <button type="submit" name="reset">Reset All</button>
-    </form>
-
-    <ul>
+   <h2>Logged Items</h2>
+<ul>
     {% for item in items %}
         <li>
             {{ item.name }} - {{ item.calories }} kcal 
@@ -48,7 +33,15 @@
                 <button type="submit" name="delete">Delete</button>
             </form>
         </li>
+    {% empty %}
+        <li>No food items added yet.</li>
     {% endfor %}
 </ul>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <button type="submit" name="reset">Reset All</button>
+    </form>
+
 </body>
 </html>
