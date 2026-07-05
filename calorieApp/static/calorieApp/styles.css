@@ -1,0 +1,135 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#74ebd5,#ACB6E5);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.container{
+    width:700px;
+    background:white;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+h1{
+    text-align:center;
+    color:#2e7d32;
+    margin-bottom:25px;
+}
+
+.total-card{
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:30px;
+}
+
+.total-card h2{
+    font-size:40px;
+}
+
+.total-card p{
+    margin-top:10px;
+    opacity:.9;
+}
+
+.food-form{
+    display:flex;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.food-form input{
+    flex:1;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.food-form button{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.food-form button:hover{
+    background:#1b5e20;
+}
+
+h2{
+    margin-bottom:15px;
+}
+
+.food-list{
+    list-style:none;
+}
+
+.food-list li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#f7f7f7;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:15px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.food-list li:hover{
+    transform:translateY(-2px);
+    transition:.3s;
+}
+
+.delete-btn{
+    background:#e53935;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.delete-btn:hover{
+    background:#b71c1c;
+}
+
+.reset-btn{
+    width:100%;
+    background:#ff9800;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:10px;
+    margin-top:20px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.reset-btn:hover{
+    background:#ef6c00;
+}
+
+.empty{
+    text-align:center;
+    color:gray;
+    background:none !important;
+    box-shadow:none !important;
+}

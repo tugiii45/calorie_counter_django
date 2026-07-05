@@ -4,44 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'calorieApp/style.css' %}">
+    <link rel="stylesheet" href="{% static 'calorieApp/styles.css' %}">
     <title>Calorie Counter</title>
 </head>
 <body>
 
-    <h1>Calorie Counter</h1>
+<div class="container">
 
-    <h3>Total Calories for Today: {{ total }} kcal</h3>
+    <h1> Calorie Counter</h1>
 
-    <form method="POST">
+    <div class="total-card">
+        <h2>{{ total }} kcal</h2>
+        <p>Total Calories Today</p>
+    </div>
+
+    <form method="POST" class="food-form">
         {% csrf_token %}
         <input type="text" name="name" placeholder="Food Name" required>
         <input type="number" name="calories" placeholder="Calories" required>
         <button type="submit" name="add">Add Item</button>
     </form>
 
-    <hr>
+    <h2>Logged Items</h2>
 
-   <h2>Logged Items</h2>
-<ul>
-    {% for item in items %}
+    <ul class="food-list">
+        {% for item in items %}
         <li>
-            {{ item.name }} - {{ item.calories }} kcal 
-            <form method="POST" style="display:inline;">
+            <span>
+                <strong>{{ item.name }}</strong><br>
+                {{ item.calories }} kcal
+            </span>
+
+            <form method="POST">
                 {% csrf_token %}
                 <input type="hidden" name="item_id" value="{{ item.id }}">
-                <button type="submit" name="delete">Delete</button>
+                <button class="delete-btn" type="submit" name="delete">
+                    Delete
+                </button>
             </form>
         </li>
-    {% empty %}
-        <li>No food items added yet.</li>
-    {% endfor %}
-</ul>
+        {% empty %}
+        <li class="empty">No food items added yet.</li>
+        {% endfor %}
+    </ul>
 
-    <form method="POST" action="">
+    <form method="POST">
         {% csrf_token %}
-        <button type="submit" name="reset">Reset All</button>
+        <button class="reset-btn" type="submit" name="reset">
+            Reset All
+        </button>
     </form>
+
+</div>
 
 </body>
 </html>
