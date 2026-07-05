@@ -55,7 +55,7 @@ ROOT_URLCONF = 'calorieProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['calorieApp/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
